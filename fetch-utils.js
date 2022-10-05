@@ -1,6 +1,6 @@
-const SUPABASE_URL = 'https://nwxkvnsiwauieanvbiri.supabase.co';
+const SUPABASE_URL = 'https://zugbtxsupmipmcvstili.supabase.co';
 const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNzAwMzQzNCwiZXhwIjoxOTUyNTc5NDM0fQ.8XIsU0FANdaNeQnT-DojpTL-GTlTPZ4CYZDEetpFpWc';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp1Z2J0eHN1cG1pcG1jdnN0aWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQ5OTUxOTcsImV4cCI6MTk4MDU3MTE5N30.fVF4xo2Sgx6L8sa3SfzFgBlSaehoa6tdBMLJUbTht6s';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
