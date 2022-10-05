@@ -70,7 +70,10 @@ function displayError() {
 
 function displayPet() {
     // > Part B: display the pet info
-    console.log('displayed pet!');
+    petName.textContent = pet.name;
+    petImage.src = pet.src = pet.image_url;
+    petImage.alt = pet.name;
+    petBio.textContent = pet.bio;
 }
 
 function displayComments() {
