@@ -4,6 +4,7 @@ import '../auth/user.js';
 // > Part B: import pet fetch
 import { getPet } from '../fetch-utils.js';
 // > Part C: import create comment
+import { createComment } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 
 /* Get DOM Elements */
@@ -47,10 +48,12 @@ window.addEventListener('load', async () => {
 
 addCommentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
     // > Part C:
     //    - create an comment insert object from formdata and the id of the pet
+    const formData = new FormData(addCommentForm);
     //    - create the comment
+    const newComment = { text: formData.get('text'), pet_id: pet.id };
+    console.log(newComment);
     //    - store and check for an error and display it, otherwise
     //    - add the new comment (data) to the front of the pet comments using unshift
     //    - reset the form
