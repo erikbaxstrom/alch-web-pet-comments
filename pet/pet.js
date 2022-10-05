@@ -56,12 +56,18 @@ addCommentForm.addEventListener('submit', async (e) => {
     const newComment = { text: formData.get('text'), pet_id: pet.id };
     //    - store and check for an error and display it, otherwise
     const response = await createComment(newComment);
-    //    - add the new comment (data) to the front of the pet comments using unshift
-    console.log('response', response, 'pet', pet);
-    pet.comments.unshift(response.data);
-    //    - reset the form
-    addCommentForm.reset();
-    displayComments();
+    error = response.error;
+
+    if (error) {
+        displayError();
+    } else {
+        //    - add the new comment (data) to the front of the pet comments using unshift
+        const comment = response.data;
+        pet.comments.unshift(comment);
+        displayComments();
+        //    - reset the form
+        addCommentForm.reset();
+    }
 });
 
 /* Display Functions */
@@ -86,8 +92,9 @@ function displayPet() {
 
 function displayComments() {
     commentList.innerHTML = '';
-    console.log('comments', pet.comments);
     for (const comment of pet.comments) {
         // > Part C: render the comments
+        const commentEl = renderComment(comment);
+        commentList.append(commentEl);
     }
 }
